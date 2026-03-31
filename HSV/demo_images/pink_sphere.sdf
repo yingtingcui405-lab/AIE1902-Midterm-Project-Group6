@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="pink_sphere">
+    <pose>0 0 0.4 0 0 0</pose>
+
+    <link name="link">
+
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.4</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1.0 0.0 1.0 1</ambient>
+          <diffuse>1.0 0.0 1.0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>1.0 0.0 1.0 1</emissive>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.4</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <iyy>0.1</iyy>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+
+    </link>
+  </model>
+</sdf>

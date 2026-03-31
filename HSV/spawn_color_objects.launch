@@ -1,0 +1,12 @@
+<launch>
+    <!-- 启动turtlebot3_empty_world -->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch"/>
+
+    <!-- 生成彩色物体 -->
+    <!-- 位置环绕机器人四周，距离适中，避免互相遮挡 -->
+    <node name="spawn_red_sphere"    pkg="gazebo_ros" type="spawn_model" args="-file $(find lab2_perception)/demo_images/red_sphere.sdf -sdf -model red_sphere -x 2.5 -y 0.0 -z 0.4" respawn="false" output="screen"/>
+    <node name="spawn_green_cube" pkg="gazebo_ros" type="spawn_model" args="-file $(find lab2_perception)/demo_images/green_cube.sdf -sdf -model green_cube -x 1.0 -y 0.0 -z 0.5" respawn="false" output="screen"/>
+    <node name="spawn_blue_sphere"     pkg="gazebo_ros" type="spawn_model" args="-file $(find lab2_perception)/demo_images/blue_sphere.sdf -sdf -model blue_sphere -x 0.0 -y 2.5 -z 0.5" respawn="false" output="screen"/>
+    <node name="spawn_pink_sphere"     pkg="gazebo_ros" type="spawn_model" args="-file $(find lab2_perception)/demo_images/pink_sphere.sdf -sdf -model pink_sphere -x -1.6 -y 1.6 -z 0.4" respawn="false" output="screen"/>
+    <node name="spawn_yellow_cylinder" pkg="gazebo_ros" type="spawn_model" args="-file $(find lab2_perception)/demo_images/yellow_cylinder.sdf -sdf -model yellow_cylinder -x -2.5 -y 0.0 -z 0.35" respawn="false" output="screen"/>
+</launch>
