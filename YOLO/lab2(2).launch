@@ -1,0 +1,15 @@
+<launch>
+    <!-- 定义一个外部可以传入的参数, 名字叫 detect_mode, 默认值设为 color -->
+    <arg name="detect_mode" default="color" />
+
+    <!-- Other nodes -->
+    <node pkg="lab2_perception" type="perception_node.py" name="perception_node" output="screen">
+        <!-- 把上面的 arg 参数, 传递给 python 代码里的 mode 变量 -->
+        <param name="mode" value="$(arg detect_mode)" />
+    </node>
+
+    <!-- RViz -->
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find lab2_perception)/rviz/lab2.rviz"/>
+</launch>
+
